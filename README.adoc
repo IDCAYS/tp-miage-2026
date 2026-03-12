@@ -111,6 +111,8 @@ NOTE: Pour lancer l'application Spring, sélectionner la classe `TodolistApplica
 
 * Vérifier avec DBeaver que les données sont bien en base PostgreSQL.
 
+image::images/Exo1img.png[]
+
 ### Exercice 2 - Refactoring en architecture hexagonale
 _Temps estimé : 1 h 20_
 
