@@ -127,6 +127,24 @@ Source : http://leanpub.com/get-your-hands-dirty-on-clean-architecture[Tom Hombe
 
 *Rappeler en quelques lignes les grands principes de l'architecture hexagonale.*
 
+L’architecture hexagonale, a été conçue pour isoler le cœur métier d’une application de ses interfaces techniques (web, base de données, systèmes externes, etc.). Voici les grands principes :
+
+Indépendance du domaine métier : le cœur de l’application ne dépend d’aucune technologie. Il contient la logique métier, modélisée à travers des entités riches.
+
+Couche application : elle orchestre les cas d’usage à l’aide de ports d’entrée que les adaptateurs appellent pour initier des actions. Cette couche contient aussi les ports de sortie, utilisés pour interagir avec les systèmes externes (BDD, APIs…​).
+
+Ports et adaptateurs :
+
+Les ports sont des interfaces définies côté application.
+
+Les adaptateurs implémentent ces interfaces pour permettre la communication entre le monde extérieur et le cœur métier.
+
+Inversion des dépendances : les dépendances vont du périphérique vers le centre. Le domaine métier ne connaît pas les technologies, mais les utilise via des abstractions (interfaces).
+
+Testabilité et maintenabilité : en rendant le domaine métier indépendant de la technique, il devient plus facile à tester et à faire évoluer.
+
+Cette architecture favorise un découplage fort entre la logique métier et les détails d’implémentation, rendant l’application plus souple, maintenable et facilement testable.
+
 Compléter ce code avec une fonctionnalité de création de `TodoItem`  persisté en base et appelé depuis un endpoint REST `POST /todos` qui :
 
 * prend un `TodoItem` au format JSON dans le body (voir exemple de contenu plus haut);
