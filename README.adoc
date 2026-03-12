@@ -74,6 +74,10 @@ Fait
 
 *Pourquoi `todoItemRepository` est-il `null` ? Quelle est la meilleure façon de l'injecter ?*
 
+Le todoItemRepository est nul car il n’a pas été correctement injecté dans TodoListController via l’injection de dépendances de Spring. Dans le code actuel, bien que TodoListController dispose d’un constructeur permettant d’injecter TodoItemRepository, nous avons également un constructeur par défaut vide qui ne fait aucune injection. En conséquence, Spring instancie TodoListController sans fournir TodoItemRepository, ce qui entraîne une valeur null.
+
+Pour garantir une injection correcte, il est recommandé d’utiliser l’injection de dépendances par le constructeur. Cela implique de supprimer le constructeur vide afin d’imposer l’utilisation du constructeur prenant TodoItemRepository en paramètre. Spring pourra alors automatiquement injecter la dépendance requise, assurant ainsi un bon fonctionnement du contrôleur.
+
 * Modifier le code en conséquence.
 
 * Tester vos endpoints avec un client REST.
