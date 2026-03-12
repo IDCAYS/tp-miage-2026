@@ -201,8 +201,6 @@ Simuler le comportement du service externe.
 
 *S'il vous reste du temps, écrire quelques-uns de ces tests.*
 
-ToDoItemTest dans le dossier test 
-
 [TIP]
 =====
 - Pour tester l'adapter REST, utiliser l'annotation `@WebMvcTest(controllers = TodoListController.class)`
