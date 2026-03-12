@@ -22,13 +22,13 @@ public class TodoListController {
 	
 	
 	private GetTodoItems getTodoItemsQuery;
-	// A compléter
+	private AddTodoItem addTodoItemsQuery;
 	
 	
 	@Inject
-	//A compléter
-	public TodoListController(GetTodoItems getTodoItemsQuery ) {
+	public TodoListController(GetTodoItems getTodoItemsQuery, AddTodoItem addTodoItem ) {
 		this.getTodoItemsQuery = getTodoItemsQuery;
+		this.addTodoItemsQuery= addTodoItem;
 	}
 	
 	@GetMapping("/todos")
@@ -38,10 +38,11 @@ public class TodoListController {
 	
 	
 	// Endpoint de type POST vers "/todos"
-	// A compléter
-	public void ajouterItem(@RequestBody TodoItem item) {
-		// A compléter		
-	}
+    @PostMapping("/todos")
+    @ResponseStatus(HttpStatus.CREATED) // renvoie un 201 Created
+    public void ajouterItem(@RequestBody TodoItem item) {
+        addTodoItemsQuery.addTodoItem(item);
+    }
 	
 	
 }
