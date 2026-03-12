@@ -161,6 +161,44 @@ _Temps estimé : 20 mins_
 
 *Quels famille de tests devra-t-on écrire pour les adaptateurs ?* 
 
+- Web Adapter :
+
+Test de Controller
+
+Objectifs :
+
+Vérifier que les requêtes HTTP sont correctement transformées en appels aux ports d’entrée (use cases).
+
+S’assurer que les bons codes HTTP sont renvoyés (200, 201, 400, 404, etc.).
+
+Valider la sérialisation / désérialisation JSON <→ objets Java.
+
+Tester les paramètres de requête, les corps de requête, les valeurs de retour.
+
+- Persistence adapter :
+
+Test de Mapping
+
+Objectifs :
+
+Vérifier que les entités JPA (ou autre ORM) sont correctement mappées vers les entités métier.
+
+Tester les opérations CRUD réelles sur une base (souvent en mémoire comme H2).
+
+S’assurer que les requêtes personnalisées renvoient les bonnes données.
+
+- External System Adapter :
+
+Test d’intégration
+
+Objectifs :
+
+S’assurer que l’adaptateur sait consommer un service externe (HTTP, messaging…).
+
+Vérifier les erreurs de communication (timeout, 404…).
+
+Simuler le comportement du service externe.
+
 *S'il vous reste du temps, écrire quelques-uns de ces tests.*
 
 [TIP]
