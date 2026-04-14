@@ -1,4 +1,4 @@
-package com.acme.todolist;
+package main.test;
 
 import com.acme.todolist.domain.TodoItem;
 
